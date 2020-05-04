@@ -10,3 +10,8 @@ num = int(num)
 
 # YOUR CODE HERE
 
+def checkParity(number):
+    if number%2 is 0:
+        print('Even!')
+    else:
+        print('Odd!')
