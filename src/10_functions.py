@@ -15,3 +15,6 @@ def checkParity(number):
         print('Even!')
     else:
         print('Odd!')
+
+
+checkParity(num)
