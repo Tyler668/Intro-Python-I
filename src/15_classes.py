@@ -2,28 +2,61 @@
 # constructor
 
 # YOUR CODE HERE
+class LatLon():
+    def __init__(self, lat, lon):
+        self.latitude = lat
+        self.longitude = lon
+
+latlong = LatLon(300, 599)
+# latlong.latitude = 100
+# latlong.longitude = 233 
+
+print('Latlong', latlong.latitude, latlong.longitude)
 
 # Make a class Waypoint that can be passed parameters `name`, `lat`, and `lon` to the
 # constructor. It should inherit from LatLon. Look up the `super` method.
 
 # YOUR CODE HERE
 
+class Waypoint(LatLon):
+    def __init__(self, name, lat, lon):
+        self.name = name
+        LatLon.__init__(self, lat, lon)
+    def __str__(self):
+        return "\nName: {self.name}\nLatitude: {self.latitude}\nLongitude: {self.longitude}\n".format(self = self)
+
+
+waypoint1 = Waypoint('Antarctica', 100, 1000)
+print('WAY!', waypoint1)
+# print('Waypoint', waypoint.name, waypoint.latitude, waypoint.longitude)
+
 # Make a class Geocache that can be passed parameters `name`, `difficulty`,
 # `size`, `lat`, and `lon` to the constructor. What should it inherit from?
 
 # YOUR CODE HERE
+class Geocache(Waypoint):
+    def __init__(self, name, lat, lon, size, difficulty):
+        self.size = size
+        self.difficulty = difficulty
+        Waypoint.__init__(self, name, lat, lon)
+    def __str__(self):
+        return "\nName: {self.name}\nLatitude: {self.latitude}\nLongitude: {self.longitude}\nSize: {self.size}\nDifficulty: {self.difficulty}\n".format(self = self)
+
+
 
 # Make a new waypoint and print it out: "Catacombs", 41.70505, -121.51521
-
+cat = Waypoint('Catacombs', 41.70505, -121.51521)
 # YOUR CODE HERE
-
+print('CAT', cat)
 # Without changing the following line, how can you make it print into something
 # more human-readable? Hint: Look up the `object.__str__` method
-print(waypoint)
+# print(waypoint)
 
-# Make a new geocache "Newberry Views", diff 1.5, size 2, 44.052137, -121.41556
+# # Make a new geocache "Newberry Views", diff 1.5, size 2, 44.052137, -121.41556
 
-# YOUR CODE HERE
+# # YOUR CODE HERE
 
-# Print it--also make this print more nicely
-print(geocache)
+# # Print it--also make this print more nicely
+# print(geocache)
+geo = Geocache('Brazil', 444, 333, 'Large', 'Expert')
+print('GEO', geo)
