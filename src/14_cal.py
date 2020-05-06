@@ -36,13 +36,13 @@ today = date.today()
 todayCal = calendar.month(today.year, today.month, 2, 1)
 
 
-
-def printCalendar(*argvs, month = today.month, year = today.year):
+def printCalendar(month=today.month, year=today.year):
     print(calendar.month(int(year), int(month), 2, 1))
 
 
 x = input("What calendar do you want? [Month], [Year]: ").split(',')
-printCalendar(*x)
-    
-    
-      
+
+if len(x) == 1:
+    print(todayCal)
+else:
+    printCalendar(*x)

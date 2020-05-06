@@ -13,6 +13,8 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 with open("C:\\Users\\tyler\\Documents\\github\\Intro-Python-I\\src\\foo.txt", "r") as f:
     print(f.read())
 
+# ./src/foo.txt
+
 
 
 # Open up a file called "bar.txt" (which doesn't exist yet) for
